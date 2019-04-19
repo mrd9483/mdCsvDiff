@@ -28,7 +28,8 @@
     "react/jsx-filename-extension": "off",
     "react/forbid-prop-types":"off",
     "func-names":["warn", "as-needed"],
-    "no-restricted-syntax":"off"
+    "no-restricted-syntax":"off",
+    "no-plusplus":"off"
   },
   "parser": "babel-eslint",
   "extends": "airbnb",

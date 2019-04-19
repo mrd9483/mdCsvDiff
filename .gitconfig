@@ -1,0 +1,15 @@
+[user]
+    email = <my email here>
+    name = Steven Murawski
+    signingkey = <my gpg signing key here>
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+    commit = commit -S -s
+[core]
+    editor = code --wait
+    eol = lf
+    autocrlf = input
+    excludesfile = ~/.gitignore

@@ -1,10 +1,11 @@
 import React from 'react';
+import ViewTable from '../Components/View/ViewTable';
 
-
+import { Columns, Rows } from '../utilities/fakeStuff';
 
 const View = function (props) {
   return (
-    <div>View</div>
+    <ViewTable rows={Rows} columns={Columns} />
   );
 };
 
