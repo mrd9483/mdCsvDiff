@@ -1,0 +1,20 @@
+[credential]
+    helper = wincred
+[user]
+    email = <my email here>
+    name = Steven Murawski
+    signingkey = <my gpg signing key here>
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+    commit = commit -S -s
+[core]
+    editor = code --wait
+    eol = lf    autocrlf = input
+    excludesfile = ~/.gitignore
+[difftool "winmerge"]
+    cmd = /c/Program\\ Files\\ \\(x86\\)/WinMerge/WinMergeU.exe
+[gpg]
+    program = c:/Program Files (x86)/GNU/GnuPG/gpg2.exe

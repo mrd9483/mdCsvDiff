@@ -19,11 +19,17 @@ const styles = theme => ({
   }
 });
 
+const indStyles = {
+  nav: {
+    height: '64px'
+  }
+};
+
 function Nav(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <div className={classes.root} style={indStyles.nav}>
+      <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h5" color="inherit" className={classes.grow} component={Link} to="/">
             mdCsvDiff
