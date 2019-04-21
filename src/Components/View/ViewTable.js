@@ -63,20 +63,18 @@ const rowView = rows => rows.map((row, i) => {
   return tr;
 });
 
-const TableView = function ({ columns, rows }) {
-  return (
-    <Table>
-      <thead>
-        <tr>
-          {columnView(columns)}
-        </tr>
-      </thead>
-      <tbody>
-        {rowView(rows)}
-      </tbody>
-    </Table>
-  );
-};
+const TableView = ({ columns, rows }) => (
+  <Table>
+    <thead>
+      <tr>
+        {columnView(columns)}
+      </tr>
+    </thead>
+    <tbody>
+      {rowView(rows)}
+    </tbody>
+  </Table>
+);
 
 TableView.propTypes = {
   columns: PropTypes.array.isRequired,
