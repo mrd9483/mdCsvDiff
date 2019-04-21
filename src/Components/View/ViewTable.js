@@ -4,11 +4,8 @@ import styled from 'styled-components';
 
 const Table = styled.table`
   width: 100%;
-  border-collapse: collapse;
   height: 100%;
-`;
-
-const TableHeader = styled.thead`
+  border-collapse: collapse;
 `;
 
 const TableHeaderCell = styled.th`
@@ -16,6 +13,12 @@ const TableHeaderCell = styled.th`
   padding: 10px 6px;
   background-color: #A5B0FF;
   border-top: 0px;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 64px;
 `;
 
 const TableCell = styled.td`
@@ -35,9 +38,6 @@ const TableRow = styled.tr`
   :nth-child(even) {
     background: #f6f6ff;
   }
-`;
-
-const TableBody = styled.tbody`
 `;
 
 const columnView = columns => columns.map(col => (
@@ -66,14 +66,14 @@ const rowView = rows => rows.map((row, i) => {
 const TableView = function ({ columns, rows }) {
   return (
     <Table>
-      <TableHeader>
+      <thead>
         <tr>
           {columnView(columns)}
         </tr>
-      </TableHeader>
-      <TableBody>
+      </thead>
+      <tbody>
         {rowView(rows)}
-      </TableBody>
+      </tbody>
     </Table>
   );
 };
