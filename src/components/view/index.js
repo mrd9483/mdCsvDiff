@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import ViewTable from '../Components/View/ViewTable';
-import OpenTable from '../Components/View/OpenTable';
-import OpenFile from '../Components/View/Utilities/ParseFile';
+import ViewTable from './viewTable';
+import OpenTable from './openTable';
+import OpenFile from './utilities/parseFile';
 
-import { displayNotification } from '../actions';
-import { Columns, Rows } from '../utilities/fakeStuff';
+import { displayNotification } from '../../actions';
+import { Columns, Rows } from '../../utilities/fakeStuff';
 
 class View extends React.Component {
   static propTypes = {

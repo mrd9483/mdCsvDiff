@@ -2,12 +2,12 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import View from './containers/View';
-import Diff from './Pages/Diff';
-import Aggregate from './Pages/Aggregate';
-import Home from './Pages/Home';
+import View from '../components/view';
+import Diff from '../components/diff';
+import Aggregate from '../components/aggregate';
+import Home from '../components/home';
 
-const DiffRoute = () => (
+const Router = () => (
   <main>
     <Switch>
       <Route exact path="/view" component={View} />
@@ -18,4 +18,4 @@ const DiffRoute = () => (
   </main>
 );
 
-export default connect()(DiffRoute);
+export default connect()(Router);

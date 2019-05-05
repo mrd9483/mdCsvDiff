@@ -5,9 +5,9 @@ import red from '@material-ui/core/colors/red';
 import indigo from '@material-ui/core/colors/indigo';
 import { connect } from 'react-redux';
 
-import Nav from './Components/Nav/Nav';
-import DiffRoute from './DiffRoute';
-import Notifier from './Components/Shared/Notifier';
+import Nav from '../nav';
+import Router from '../../routers';
+import Notifier from '../shared/notifier';
 
 // import './App.css';
 
@@ -29,7 +29,7 @@ const App = function () {
     <MuiThemeProvider theme={theme}>
       <Nav />
       <CssBaseline />
-      <DiffRoute />
+      <Router />
       <Notifier />
     </MuiThemeProvider>
   );
