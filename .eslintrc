@@ -26,6 +26,7 @@
     "operator-linebreak": ["error", "after"],
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": "off",
+    "react/prefer-stateless-function":"off",
     "react/forbid-prop-types":"off",
     "func-names":["warn", "as-needed"],
     "no-restricted-syntax":"off",

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import View from './Pages/View';
+import { connect } from 'react-redux';
+
+import View from './containers/View';
 import Diff from './Pages/Diff';
 import Aggregate from './Pages/Aggregate';
 import Home from './Pages/Home';
@@ -16,4 +18,4 @@ const DiffRoute = () => (
   </main>
 );
 
-export default DiffRoute;
+export default connect()(DiffRoute);

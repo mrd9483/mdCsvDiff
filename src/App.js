@@ -3,8 +3,11 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import red from '@material-ui/core/colors/red';
 import indigo from '@material-ui/core/colors/indigo';
+import { connect } from 'react-redux';
+
 import Nav from './Components/Nav/Nav';
 import DiffRoute from './DiffRoute';
+import Notifier from './Components/Shared/Notifier';
 
 // import './App.css';
 
@@ -27,8 +30,9 @@ const App = function () {
       <Nav />
       <CssBaseline />
       <DiffRoute />
+      <Notifier />
     </MuiThemeProvider>
   );
 };
 
-export default App;
+export default connect()(App);
