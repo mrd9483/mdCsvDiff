@@ -1,6 +1,9 @@
+import Parser from '../../../utilities/parser';
+
 const { dialog } = window.require('electron').remote;
 
-const OpenFile = () => {
+
+const OpenFile = () => new Promise((response, reject) => {
   const options = {
     title: 'Open CSV File',
     filters: [
@@ -10,11 +13,15 @@ const OpenFile = () => {
 
   const files = dialog.showOpenDialog(null, options);
   if (!files) {
-    return { type: 'DISPLAY_NOTIFICATION', message: 'File not found' };
+    reject(new Error('File not found'));
+  } else {
+    const parser = new Parser();
+
+    response(parser.doParseAsync(files[0]).then((data) => {
+      const headers = Object.keys(data[0]).map(i => ({ name: i, value: i }));
+      return { columns: headers, rows: data };
+    }));
   }
-
-  return files;
-};
-
+});
 
 export default OpenFile;

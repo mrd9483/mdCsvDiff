@@ -47,8 +47,9 @@ const columnView = columns => columns.map(col => (
 ));
 
 const rowView = rows => rows.map((row, i) => {
-  const cells = row.map(cell => (
-    <TableCell key={cell}>
+  const cells = row.map((cell, j) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <TableCell key={`${cell}_${i}_${j}`}>
       {cell}
     </TableCell>
   ));

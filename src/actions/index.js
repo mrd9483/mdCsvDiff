@@ -11,4 +11,14 @@ export const hideNotification = () => ({
 export const setTimeoutId = id => ({
   type: 'SET_TIMEOUT_ID',
   id
-})
+});
+
+export const setData = data => ({
+  type: 'SET_DATA',
+  rows: data.rows,
+  columns: data.columns
+});
+
+export const clearData = () => ({
+  type: 'CLEAR_DATA'
+});

@@ -15,6 +15,17 @@ const notifier = (state = { message: '' }, action) => {
   }
 };
 
-const rootReducer = combineReducers({ notifier });
+const viewData = (state = { rows: [], columns: [] }, action) => {
+  switch (action.type) {
+    case 'SET_DATA':
+      return { rows: action.rows, columns: action.columns };
+    case 'CLEAR_DATA':
+      return { rows: [], columns: [] };
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({ notifier, viewData });
 
 export default rootReducer;

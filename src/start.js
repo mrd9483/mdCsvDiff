@@ -23,7 +23,7 @@ function createWindow() {
     toolbar: false
   });
 
-  mainWindow.setMenuBarVisibility(false);
+  // mainWindow.setMenuBarVisibility(false);
   mainWindow.setMenu(null);
 
   mainWindow.loadURL(
