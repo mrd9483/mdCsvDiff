@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^3.0.2",
     "csv-parse": "^4.4.0",
     "electron": "^4.1.4",
     "electron-devtools-installer": "^2.2.4",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-react-app": "^3.0.8",
     "faker": "^4.1.0",
+    "fomantic-ui": "^2.7.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -18,6 +17,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
+    "semantic-ui-react": "^0.87.2",
     "styled-components": "^4.2.0",
     "typescript": "^3.4.3"
   },
@@ -31,7 +31,8 @@
     "react-start": "BROWSER=none react-scripts start",
     "pack": "build --dir",
     "dist": "npm run build && build",
-    "postinstall": "install-app-deps"
+    "postinstall": "install-app-deps",
+    "cssbuild": "cd src/assets/semantic && npx gulp build"
   },
   "eslintConfig": {
     "extends": "react-app"
