@@ -1,49 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {
+  Table, TableHeader, TableHeaderCell, TableRow, TableBody, TableCell
+} from 'semantic-ui-react';
 
-const Table = styled.table`
-  width: 100%;
-  height: 100%;
-  border-collapse: collapse;
-`;
-
-const TableHeaderCell = styled.th`
-  text-align: left;
-  padding: 10px 6px;
-  background-color: #A5B0FF;
-  border-top: 0px;
+const StickyTableHeaderCell = styled(TableHeaderCell)`
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  top: 64px;
-`;
-
-const TableCell = styled.td`
-  border: 1px solid #e2e3e3;
-  padding: 3px 6px;
-  margin: 0px;
-
-  :first-child {
-    border-left: 0px;
-  }
-  :last-child {
-    border-right: 0px;
-  }
-`;
-
-const TableRow = styled.tr`
-  :nth-child(even) {
-    background: #f6f6ff;
-  }
+  top: 62px;
 `;
 
 const columnView = columns => columns.map(col => (
-  <TableHeaderCell key={col}>
+  <StickyTableHeaderCell key={col}>
     {col}
-  </TableHeaderCell>
+  </StickyTableHeaderCell>
 ));
 
 const rowView = rows => rows.map((row, i) => {
@@ -64,16 +38,17 @@ const rowView = rows => rows.map((row, i) => {
   return tr;
 });
 
+
 const TableView = ({ columns, rows }) => (
-  <Table>
-    <thead>
-      <tr>
+  <Table className="striped very compact">
+    <TableHeader>
+      <TableRow>
         {columnView(columns)}
-      </tr>
-    </thead>
-    <tbody>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
       {rowView(rows)}
-    </tbody>
+    </TableBody>
   </Table>
 );
 

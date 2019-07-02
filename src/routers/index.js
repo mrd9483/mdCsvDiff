@@ -8,7 +8,8 @@ import Aggregate from '../components/aggregate';
 import Home from '../components/home';
 
 const Router = () => (
-  <main>
+  <main className="ui main text">
+    <div className="main-spacer" />
     <Switch>
       <Route exact path="/view" component={View} />
       <Route path="/diff" component={Diff} />

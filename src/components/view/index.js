@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import { Message, Container } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 import ViewTable from './viewTable';
 import OpenTable from './openTable';
@@ -16,23 +15,15 @@ import {
   setData
 } from '../../actions';
 
-const styles = theme => ({
-  root: {
-    ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-    margin: 'auto',
-    marginTop: 25,
-    width: 500
-  }
-});
+const ContainerTopMargin = styled(Container)`
+    padding-top:20px;
+`;
 
 class View extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     rows: PropTypes.array,
-    columns: PropTypes.array,
-    classes: PropTypes.object.isRequired
+    columns: PropTypes.array
   };
 
   static defaultProps = {
@@ -76,22 +67,22 @@ class View extends React.Component {
   };
 
   render() {
-    const { rows, columns, classes } = this.props;
+    const { rows, columns } = this.props;
 
     return (
       <div>
         {rows.length === 0 &&
           (
-            <div>
-              <Paper className={classes.root} elevation={9}>
-                <Typography variant="h5" component="h3">
-                  No records found
-                </Typography>
-                <Typography component="p">
-                  Please select a csv file from the file on the bottom right corner
-                </Typography>
-              </Paper>
-            </div>
+            <ContainerTopMargin>
+              <Message>
+                <div className="header">
+                    No records found
+                </div>
+                <p>
+                    Please select a csv file from the file on the bottom right corner
+                </p>
+              </Message>
+            </ContainerTopMargin>
           )}
 
         {rows.length > 0 &&
@@ -110,4 +101,4 @@ const mapStateToProps = state => ({
   columns: state.viewData.columns
 });
 
-export default withStyles(styles)(connect(mapStateToProps)(View));
+export default connect(mapStateToProps)(View);

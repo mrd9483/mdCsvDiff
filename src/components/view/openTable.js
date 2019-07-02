@@ -1,10 +1,9 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import Fab from '@material-ui/core/Fab';
-import DescriptionIcon from '@material-ui/icons/Description';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const StyledFab = styled(Fab)`
+const OpenFilePosition = styled.div`
     margin: 0;
     right: 20px;
     bottom: 20px;
@@ -12,9 +11,9 @@ const StyledFab = styled(Fab)`
 `;
 
 const OpenTable = ({ onClick }) => (
-  <StyledFab color="secondary" position="fixed">
-    <DescriptionIcon onClick={onClick} />
-  </StyledFab>
+  <OpenFilePosition>
+    <i className="large circular inverted file icon" role="button" tabIndex={0} onClick={onClick} />
+  </OpenFilePosition>
 );
 
 OpenTable.propTypes = {
